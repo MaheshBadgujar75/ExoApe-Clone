@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ExoApeFooter() {
+export default function Footer() {
   return (
     <footer className="relative mt-[12rem] sm:mt-16 md:mt-24 lg:mt-32 xl:mt-[10rem] min-h-screen overflow-hidden">
       {/* Background Image */}

@@ -11,6 +11,8 @@ const Landing = () => {
           className="w-full h-full object-cover"
           src="/BackgroundHero.jpg"
           alt="hero-bg-img"
+          loading="eager"
+          fetchpriority="high"
         />
       </div>
 
@@ -70,10 +72,13 @@ const Landing = () => {
                 We celebrate the timeless beauty of birds by revealing the
                 elegance, freedom, and harmony they bring to our world. From the
                 gentle flutter of wings to the songs that awaken our mornings,
-                we create experiences that remind people of nature’s artistry.
+                we create experiences that remind people of nature's artistry.
                 Unforgettable connections begin with a flight.
               </p>
-              <a className="text-sm sm:text-base md:text-lg lg:text-xl border-b-[.3px] md:border-b-[.5px] lg:border-b-[1px] border-zinc-100 pb-1 mt-8 sm:mt-10 inline-block cursor-pointer hover:opacity-80 transition-opacity">
+              <a
+                href="#birdie"
+                className="text-sm sm:text-base md:text-lg lg:text-xl border-b-[.3px] md:border-b-[.5px] lg:border-b-[1px] border-zinc-100 pb-1 mt-8 sm:mt-10 inline-block cursor-pointer hover:opacity-80 transition-opacity"
+              >
                 The Birdie
               </a>
             </div>

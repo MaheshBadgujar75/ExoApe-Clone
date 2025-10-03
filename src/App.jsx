@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
-import Work from "./components/Work";
+import Journeys from "./components/Journeys";
 import PlayReel from "./components/PlayReel";
 import Images from "./components/Images";
 import Spread from "./components/Spread";
@@ -33,7 +33,7 @@ function App() {
     >
       <Navbar />
       <Landing />
-      <Work />
+      <Journeys />
       <PlayReel />
       <Images />
       <Spread />
