@@ -21,7 +21,7 @@ const PlayReel = () => {
 
     const ctx = gsap.context(() => {
       const isMobile = window.innerWidth < 768;
-      const slideDistance = isMobile ? "20%" : "70%";
+      const slideDistance = isMobile ? "10%" : "40%";
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -90,13 +90,8 @@ const PlayReel = () => {
           preload="metadata"
           onLoadedData={handleVideoLoad}
           className="w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-110 object-cover"
-          src="https://player.vimeo.com/progressive_redirect/playback/914803778/rendition/1080p/file.mp4?loc=external&log_user=0&signature=5344c0e4fea63ca54bb433621ca0be7b9470b475583fa68b26de2b6e380a390a"
-        >
-          <source
-            src="https://player.vimeo.com/progressive_redirect/playback/914803778/rendition/1080p/file.mp4?loc=external&log_user=0&signature=5344c0e4fea63ca54bb433621ca0be7b9470b475583fa68b26de2b6e380a390a"
-            type="video/mp4"
-          />
-        </video>
+          src="/videos/GreenBird.mp4"
+        ></video>
       </div>
 
       {/* Overlay Content */}
@@ -108,7 +103,7 @@ const PlayReel = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4"
-            aria-label="Star icon"
+            aria-label="Bird icon"
           >
             <path
               d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z"
@@ -116,7 +111,7 @@ const PlayReel = () => {
             />
           </svg>
           <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-light tracking-wide">
-            Work in Motion
+            Birds Journeys
           </h3>
         </div>
 
@@ -126,20 +121,21 @@ const PlayReel = () => {
             ref={play}
             className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light whitespace-nowrap will-change-transform"
           >
-            Play
+            Wings
           </div>
           <div
             ref={reel}
             className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-light whitespace-nowrap will-change-transform"
           >
-            Reel
+            Freedom
           </div>
         </h1>
 
         {/* Bottom Text */}
         <p className="text-center text-xs sm:text-sm md:text-base xl:text-lg font-light leading-relaxed md:leading-loose px-2 sm:px-4 max-w-xl sm:max-w-2xl lg:max-w-3xl mx-auto">
-          Our work is best experienced in motion. Don't forget to put on your
-          headphones.
+          Celebrating the timeless journeys of birds that inspire freedom,
+          harmony, and connection across skies, forests, and cities. Watch
+          closely and experience the beauty in motion.
         </p>
       </div>
     </div>

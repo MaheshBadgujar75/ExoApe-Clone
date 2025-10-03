@@ -7,36 +7,35 @@ export default function Work() {
 
   const projects = [
     {
-      title: "Ottografie",
-      description: "Seamless Photographic Journey",
+      title: "Wings of Freedom",
+      description:
+        "Celebrating the boundless skies where birds inspire us to live without limits and embrace new horizons.",
       video:
         "https://player.vimeo.com/progressive_redirect/playback/1047169994/rendition/720p/file.mp4?loc=external&log_user=0&signature=780c70237c241a1fe7a4b3837cad974ed7fb98f38cd2e6f912752ff9e44107ee",
-      image:
-        "https://a.storyblok.com/f/133769/2400x2990/729680ed7f/ottografie-2025-hero.jpg/m/1300x1620/filters:quality(90)",
+      image: "/WingsOfFreedom.png",
     },
     {
-      title: "Amaterasu",
-      description: "Frontier Health Innovation",
-      video:
-        "https://player.vimeo.com/progressive_redirect/playback/1020697798/rendition/720p/file.mp4?loc=external&log_user=0&signature=cd45f23683db91c40f08a3f4a31ba153f1e93eac3d4f98cb3ca4b651b8830d04",
-      image:
-        "https://a.storyblok.com/f/133769/2409x3000/c155d3e27e/amaterasu-hero.jpg/m/1300x1619/filters:quality(90)",
+      title: "Harmony in Nature",
+      description:
+        "Exploring how birds connect forests, rivers, and cities, reminding us of the balance between people and the wild.",
+      video: "/HarmonyOfBirds.png",
+      image: "/HarmonyOfBirds.png",
     },
     {
-      title: "Cambium",
-      description: "Pioneering Sustainable Solutions",
+      title: "Songs of Dawn",
+      description:
+        "Capturing the melodies that awaken our mornings, each note a timeless reminder of beauty in everyday life.",
       video:
         "https://player.vimeo.com/progressive_redirect/playback/1001982172/rendition/720p/file.mp4?loc=external&log_user=0&signature=b92eb1ab8119f2ffaaa03f075ef271714f5ee63065ee8d29f4e188ce30202de0",
-      image:
-        "https://a.storyblok.com/f/133769/2409x3000/cfd16e1a58/cambium-carbon-hero.jpg/m/1300x1619/filters:quality(90)",
+      image: "SongsOfDawn.png",
     },
     {
-      title: "Columbia Pictures",
-      description: "Celebrating a Century of Cinema",
+      title: "Flight Beyond Boundaries",
+      description:
+        "Showcasing the resilience of birds that migrate across continents, teaching us the strength of endurance and unity.",
       video:
         "https://player.vimeo.com/progressive_redirect/playback/927016456/rendition/720p/file.mp4?loc=external&log_user=0&signature=270ce5ba6bf44a717c74cf85de5f3de1d33a36ba5205b660e5e23b873199d71a",
-      image:
-        "https://a.storyblok.com/f/133769/2400x2990/540fb12941/columbia-pictures-thumbnail.jpg/m/1300x1620/filters:quality(90)",
+      image: "/FlightBeyondBoundaries.png",
     },
   ];
 
@@ -71,34 +70,29 @@ export default function Work() {
             <motion.span
               initial={{ y: "70%", opacity: 0 }}
               whileInView={{ rotate: 0, y: 0, opacity: 1 }}
-              viewport={{ once: true }}
               transition={{
                 ease: [0.22, 1, 0.36, 1],
                 duration: 0.8,
               }}
               className="inline-block origin-left"
             >
-              Work
+              Journeys
             </motion.span>
           </h1>
         </div>
 
-        {/* Desktop Layout - Large screens only */}
-        <div
-          className="hidden xl:block relative"
-          style={{ minHeight: "1600px" }}
-        >
+        {/* Desktop Layout */}
+        <div className="hidden xl:block relative" style={{ minHeight: "1600px" }}>
           {/* Side Text */}
           <div className="absolute top-0 right-0 w-72 xl:w-80 z-10">
             <div className="flex items-center gap-2 mb-4 xl:mb-6">
               <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
               <span className="text-xs tracking-widest uppercase font-medium">
-                Featured Projects
+                Featured Journeys
               </span>
             </div>
             <p className="text-sm leading-relaxed text-gray-600">
-              Highlights of cases that we passionately built with
-              forward-thinking clients and friends over the years.
+              Celebrating timeless stories of birds that inspire freedom, harmony, and connection across skies, forests, and beyond.
             </p>
           </div>
 
@@ -106,7 +100,7 @@ export default function Work() {
           {projects.map((project, i) => {
             const pos = positions[i];
             const isHovered = hoverIndex === i;
-            const isLight = i < 2;
+            const isLight = i < 2; // 1 & 2 cards black, 3 & 4 cards white
 
             return (
               <div
@@ -137,17 +131,25 @@ export default function Work() {
                 </h2>
 
                 {/* Description */}
-                <p className="text-gray-500 text-sm leading-relaxed mb-4 xl:mb-6">
+                <p
+                  className={`text-sm leading-relaxed mb-4 xl:mb-6 transition-colors duration-300 ${
+                    isLight ? "text-black" : "text-white"
+                  }`}
+                >
                   {project.description}
                 </p>
 
                 {/* Image/Video Container */}
-                <div data-scroll data-scroll-speed="-0.2" className="relative overflow-hidden bg-gray-50 mb-3 xl:mb-4 rounded aspect-[4/5]">
+                <div
+                  data-scroll
+                  data-scroll-speed="-0.2"
+                  className="relative overflow-hidden rounded-3xl mb-3 xl:mb-4 aspect-[4/5]"
+                >
                   <img
                     src={project.image}
                     alt={project.title}
                     loading="lazy"
-                    className={`w-full h-full object-cover transition-opacity duration-700 ${
+                    className={`w-full h-full object-cover transition-opacity duration-700 rounded-3xl ${
                       isHovered ? "opacity-0" : "opacity-100"
                     }`}
                   />
@@ -157,12 +159,10 @@ export default function Work() {
                     loop
                     playsInline
                     preload="metadata"
-                    className={`w-full h-full object-cover absolute top-0 left-0 transition-all duration-700 ${
-                      isHovered
-                        ? "opacity-100 scale-105"
-                        : "opacity-0 scale-100"
-                    }`}
                     src={project.video}
+                    className={`w-full h-full object-cover absolute top-0 left-0 transition-all duration-700 rounded-3xl ${
+                      isHovered ? "opacity-100 scale-105" : "opacity-0 scale-100"
+                    }`}
                   />
                 </div>
 
@@ -184,12 +184,11 @@ export default function Work() {
             <div className="flex items-center gap-2 mb-4 sm:mb-6">
               <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
               <span className="text-xs tracking-widest uppercase font-medium">
-                Featured Projects
+                Featured Journeys
               </span>
             </div>
             <p className="text-sm sm:text-base leading-relaxed text-gray-600 max-w-2xl">
-              Highlights of cases that we passionately built with
-              forward-thinking clients and friends over the years.
+              Celebrating timeless stories of birds that inspire freedom, harmony, and connection across skies, forests, and beyond.
             </p>
           </div>
 
@@ -204,14 +203,14 @@ export default function Work() {
               className="cursor-pointer"
             >
               {/* Video */}
-              <div className="relative overflow-hidden bg-gray-50 mb-4 sm:mb-6 rounded aspect-[4/5]">
+              <div className="relative overflow-hidden bg-gray-50 mb-4 sm:mb-6 rounded-3xl aspect-[4/5]">
                 <video
                   autoPlay
                   muted
                   loop
                   playsInline
                   preload="metadata"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-3xl"
                   src={project.video}
                 />
               </div>
@@ -230,7 +229,7 @@ export default function Work() {
               </h2>
 
               {/* Description */}
-              <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
+              <p className="text-black text-sm sm:text-base leading-relaxed">
                 {project.description}
               </p>
             </motion.div>

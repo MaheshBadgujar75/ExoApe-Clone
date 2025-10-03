@@ -43,8 +43,8 @@ const Images = () => {
         >
           <img
             className="w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            src="https://a.storyblok.com/f/133769/348x494/21becfd449/home-news-3.jpg/m/1200x1703/filters:quality(90)"
-            alt="Fashion portrait"
+            src="/TopRightImage.jpg"
+            alt="Cute beeeater"
             loading="lazy"
           />
         </div>
@@ -60,7 +60,7 @@ const Images = () => {
             muted
             playsInline
             className="w-full h-full absolute top-1/2 left-[15rem] -translate-x-1/2 -translate-y-1/2"
-            src="https://a.storyblok.com/f/133769/x/9c433c7aac/home-news-diesel-be-a-follower.mp4"
+            src="/videos/TopLeftVideo.mp4"
           />
         </div>
 
@@ -71,8 +71,8 @@ const Images = () => {
         >
           <img
             className="w-full h-full absolute top-1/2 left-[-20%] -translate-x-1/2 -translate-y-1/2"
-            src="https://a.storyblok.com/f/133769/758x508/8a1ff60d00/home-news-4.jpg/m/1200x804/filters:quality(90)"
-            alt="Fashion scene"
+            src="/BottomLeftImage.jpg"
+            alt="Kingfisher Bird"
             loading="lazy"
           />
         </div>
@@ -88,15 +88,15 @@ const Images = () => {
             muted
             playsInline
             className="w-full h-full object-cover"
-            src="https://a.storyblok.com/f/133769/x/88b4bf7989/news-rino-pelle.mp4"
+            src="/videos/RightBottomVideo.mp4"
           />
         </div>
 
         {/* Center main image */}
         <img
           className="w-full h-full object-cover"
-          src="https://a.storyblok.com/f/133769/748x1278/5784aa7150/home-news-1.jpg/m/1200x2050/filters:quality(90)"
-          alt="Main fashion portrait"
+          src="/CenterImage.jpg"
+          alt="red and black bearded barbet bird"
         />
       </div>
     </div>
